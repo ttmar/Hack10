@@ -25,9 +25,7 @@ char *clonegetFileContents(const char *filePath);
 int main(int argc, char **argv) {
 
 char *Ans = DNAstuffs(argv[1]);
-removeChar(Ans, ' ');
 removeChar(Ans, '\n');
-removeChar(Ans, '\t');
 FILE *outputFile = fopen(argv[2], "w");
 char vic[3];
 char tor = NULL;
