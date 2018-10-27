@@ -1,5 +1,5 @@
 /**
-Author: Victor Nguyen, Collin Sipple
+Author: Victor Nguyen, Collin Sipple, David Ryan, Salman Djingueinabaye, Tony Ong
 My NU ID: 02357235
 CLASS: 155E
 Section 250
@@ -17,4 +17,9 @@ Date Finished: 10/26/2018
 
 char *getFileContents(const char *filePath);
 
+/* This funciton should solve for a given a file path or name as a string opens the file and returns
+ the contents of the file as an array of strings. Each element in the array should
+ correspond to a line in the file. Any end line character should be chomped out and
+ not included.
+ */
 char **getFileLines(const char *filePath, int *numLines);

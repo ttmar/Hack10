@@ -1,33 +1,33 @@
 /**
-Author: Victor Nguyen, Collin Sipple
+Author: Victor Nguyen, Collin Sipple, David Ryan, Salman Djingueinabaye, Tony Ong
 My NU ID: 02357235
 CLASS: 155E
 Section 250
 Date Started: 10/24/2018
 Date Finished: 10/26/2018
  *
+ *This program should takes two command line arguments. The first is an input
+file containing a DNA sequence and the second is the name of the output file in which
+you’ll place the translated protein sequence.
  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include "protein_utils.h"
-
+//"declaring" all function before the main function
 void removeChar(char *s, char c);
 
 char *DNAstuffs(const char *filePath);
 
 char *clonegetFileContents(const char *filePath);
-
+//main funciton that should work
 int main(int argc, char **argv) {
-
 
 char *Ans = DNAstuffs(argv[1]);
 removeChar(Ans, ' ');
 removeChar(Ans, '\n');
 removeChar(Ans, '\t');
-
-
 FILE *outputFile = fopen(argv[2], "w");
 char vic[3];
 char tor = NULL;
@@ -64,6 +64,7 @@ for( i = 0; i < strlen(Stuff); i++)
 return Stuff;
 }
 
+//"cloning" a function from protein_utils.c, making it easier to do ^^
 char *clonegetFileContents(const char *filePath) {
 
   FILE *file = fopen(filePath, "r");
@@ -79,12 +80,11 @@ char *clonegetFileContents(const char *filePath) {
      strcat(fileString,buffer);}
   fclose(file);
   return fileString;
-
-
 }
 //using from string_utils.c from hack 8
 void removeChar(char *s, char c)
-  { if(s == NULL) {
+  {
+     if(s == NULL) {
     return;
   }
   for(int i = 0; i < strlen(s); i++) {
